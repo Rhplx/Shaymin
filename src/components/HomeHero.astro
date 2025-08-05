@@ -1,0 +1,26 @@
+---
+import Logo from "@images/astro.svg"
+import { Image } from "astro:assets";
+---
+
+
+<section class="hero">
+    <div class="hero__container">
+        <h1 class="hero__title">Hero</h1>
+        <Image src={Logo} alt="Astro Logo" />
+    </div>
+</section>
+
+
+
+<style lang="scss">
+  @reference '@styles/global';
+
+  .hero{
+
+    &__container{
+      @apply container mx-auto px-4 py-12;
+    }
+  }
+
+</style>
