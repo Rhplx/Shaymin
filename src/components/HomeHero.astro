@@ -1,26 +1,91 @@
 ---
-import Logo from "@images/astro.svg"
-import { Image } from "astro:assets";
+import '../styles/global.css'
 ---
 
 
 <section class="hero">
-    <div class="hero__container">
-        <h1 class="hero__title">Hero</h1>
-        <Image src={Logo} alt="Astro Logo" />
+  <div class="hero__container">
+
+    <div class="hero__titles">
+      <h1 class="hero__title"> Acerca de 
+        <span class="hero__span">CallCenterPro</span>
+      </h1>
+      <h2 class="hero__subtitle">
+        Estamos revolucionando el servicio al cliente con tecnología de
+        inteligencia artificial de vanguardia y un toque humano.
+      </h2>
     </div>
+
+    <div class="hero__tags">
+      <div class="hero__tag">
+        <h1 class="hero__title-tag">2015</h1>
+        <p class="hero__text-tag">Fundado</p>
+      </div>
+      <div class="hero__tag">
+        <h1 class="hero__title-tag">120+</h1>
+        <p class="hero__text-tag">Miembros <br>del Equipo</p>
+      </div>
+      <div class="hero__tag">
+        <h1 class="hero__title-tag">500+</h1>
+        <p class="hero__text-tag">Clientes</p>
+      </div>
+      <div class="hero__tag">
+        <h1 class="hero__title-tag">24/7</h1>
+        <p class="hero__text-tag">Soporte</p>
+      </div>
+    </div>
+
+  </div>
 </section>
-
-
 
 <style lang="scss">
   @reference '@styles/global';
 
-  .hero{
+  .hero {
 
-    &__container{
-      @apply container mx-auto px-4 py-12;
+    background: linear-gradient(90deg, #0F172A 0%, rgba(30, 41, 59, 0.7) 100%);
+
+
+    &__container {
+      @apply bg-secondary text-white text-center px-4 py-8 md:px-6 lg:px-14 max-w-screen-2xl mx-auto;
     }
-  }
 
+    &__titles{
+      @apply py-8;
+    }
+
+    &__title{
+      @apply text-6xl font-bold  text-title py-8;
+    }
+
+    &__subtitle{
+      @apply font-sans text-subtitle text-lg;
+    }
+
+    &__span{ 
+      @apply text-text py-8;
+    }
+
+    &__tags{
+      @apply flex mb-20 flex-col items-center sm:flex-row sm:justify-between sm:flex-wrap sm:items-center sm:mx-35 sm:gap-2 xl:mx-85;  
+    }
+
+    &__tag{
+      @apply bg-tag w-38 h-32 border-1 border-gray-600 rounded-lg 
+      text-center py-6 my-2 font-sans text-texttag text-wrap;
+    }
+
+    &__title-tag{
+      @apply font-bold text-text text-3xl pb-2;
+    }
+
+    &__text-tag{
+      @apply text-sm text-wrap;
+    }
+
+  
+
+
+   
+  }
 </style>
