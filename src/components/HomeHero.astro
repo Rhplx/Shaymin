@@ -1,5 +1,11 @@
 ---
 import '../styles/global.css'
+import Logo from "@images/astro.svg"
+import Img1 from "@images/img1.svg"
+import Img2 from "@images/img2.svg"
+import Img3 from "@images/img3.svg"
+import Img4 from "@images/img4.svg"
+import { Image } from "astro:assets"
 ---
 
 
@@ -38,24 +44,75 @@ import '../styles/global.css'
   </div>
 </section>
 
+
+<section class="story">
+  <div class="story__container">
+
+    <div class="story__information">
+      <h1 class="story__title">Nuestra <span class="story__span">Historia</span></h1>
+      <p class="story__text"> Fundada en 2015, CallCenterPro comenzo con una mision sencilla: transformar la 
+        experiencia de los centros de llamadas combinando tecnologia avanzada con empatia humana.
+      </p>
+      <p class="story__text"> Nuestros fundadores, frustrados por los sietmas de atencion al cliente impersonales
+        e ineficaces, se propusieron crear una solucion que diera prioridad tanto a la eficiencia como a la conexion
+        humana.
+      </p>
+      <p class="story__text"> Hoy en dia prestamos servicios a mas de 500 empresas en todo el mundo, desde startups
+        hasta empresas de la lista Fortune 500, manteniendo siempre nuestros valores fundamentales de innovacion,
+        empatia y excelencia.
+      </p>
+    </div>
+
+
+    <div class="story__images">
+
+      <div>
+        <div class="story__image">
+          <Image src={Img1} alt="Oficina"/>
+        </div>
+        <div class="story__image">
+          <Image src={Img3} alt="Reunion" />
+        </div>
+      </div>
+      
+      <div>
+        <div class="story__image">
+          <Image src={Img2} alt="IA" />
+        </div>
+        <div class="story__image">
+          <Image src={Img4} alt="Junta" />
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="bolita1"></div>
+    <div class="bolita2"></div>
+
+  </div>
+
+
+
+
+</section>
+
 <style lang="scss">
   @reference '@styles/global';
 
   .hero {
 
-    background: linear-gradient(90deg, #0F172A 0%, rgba(30, 41, 59, 0.7) 100%);
-
+    background: linear-gradient(90deg, #0F172A 0%, rgba(30, 41, 59, 0.7) 100%) mx-auto;
 
     &__container {
-      @apply bg-secondary text-white text-center px-4 py-8 md:px-6 lg:px-14 max-w-screen-2xl mx-auto;
+      @apply bg-secondary text-white text-center px-4 py-8 md:px-6 lg:px-14 mx-auto;
     }
 
     &__titles{
-      @apply py-8;
+      @apply py-8 mx-5 md:mx-20 xl:mx-65 2xl:mx-70;
     }
 
     &__title{
-      @apply text-6xl font-bold  text-title py-8;
+      @apply  text-4xl sm:text-6xl font-bold  text-title py-8;
     }
 
     &__subtitle{
@@ -67,7 +124,8 @@ import '../styles/global.css'
     }
 
     &__tags{
-      @apply flex mb-20 flex-col items-center sm:flex-row sm:justify-between sm:flex-wrap sm:items-center sm:mx-35 sm:gap-2 xl:mx-85;  
+      @apply flex mb-20 flex-col items-center sm:flex-row sm:justify-between sm:flex-wrap sm:items-center sm:mx-35 sm:gap-2 
+      md:mx-50 lg:mx-32 xl:mx-90 2xl:mx-90;  
     }
 
     &__tag{
@@ -82,10 +140,51 @@ import '../styles/global.css'
     &__text-tag{
       @apply text-sm text-wrap;
     }
-
-  
-
-
    
+  }
+
+
+  .story{
+    background: rgba(15, 23, 42, 1);
+
+    &__container{
+      @apply flex flex-wrap pt-5 pb-8 sm:flex-wrap md:flex-wrap mx-auto ;
+    }
+
+    &__information{
+      @apply flex-1 text-title mx-15 sm:my-8 mr-10  md:my-10 md:mx-15 lg:my-7 xl:ml-24 2xl:mx-24 2xl:mt-28;
+    }
+
+    &__title{
+      @apply  mt-18 text-4xl font-bold py-6;
+    }
+
+     &__span{ 
+      @apply text-text;
+    }
+
+    &__text{
+      @apply text-lg py-2.5;
+    }
+
+    &__images{
+      @apply  flex flex-wrap mx-5 justify-center items-center bg-images sm:mx-35 sm:my-10 px-5 pt-5 gap-4 border-1 border-gray-600 rounded-2xl
+      shadow-xl shadow-cyan-500/50 md:ml-20 md:my-9 lg:mx-60 lg:my-6 xl:mx-24 2xl:mx-24;
+    }
+
+    &__image{
+      @apply bg-story px-3 py-3 mb-5 border-1 border-gray-600  rounded-lg ;
+    }
+
+  } 
+
+  .bolita1{
+    @apply absolute w-15 h-15  bg-indigo-600 opacity-25 rounded-full top-0 right-0 z-10 xl:mr-157 xl:mt-148 sm:w-18 sm:h-18 sm:mr-113 sm:mt-352
+    lg:mr-182 lg:mt-258;
+  }
+
+  .bolita2{
+    @apply absolute w-22 h-22 bg-blue-600 opacity-25 rounded-full top-0 right-0 z-10 xl:mt-282 xl:mr-20 sm:mr-29 sm:mt-633
+    lg:mr-50 lg:mt-542;;
   }
 </style>
