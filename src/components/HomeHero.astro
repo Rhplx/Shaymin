@@ -66,16 +66,16 @@ import { Image } from "astro:assets"
 
     <div class="story__images">
 
-      <div>
+      <div class="story__images-container">
         <div class="story__image">
-          <Image src={Img1} alt="Oficina"/>
+          <Image src={Img1} alt="Oficina" />
         </div>
         <div class="story__image">
           <Image src={Img3} alt="Reunion" />
         </div>
       </div>
       
-      <div>
+      <div class="story__images-container">
         <div class="story__image">
           <Image src={Img2} alt="IA" />
         </div>
@@ -86,8 +86,8 @@ import { Image } from "astro:assets"
       
     </div>
 
-    <div class="bolita1"></div>
-    <div class="bolita2"></div>
+    <div class="story__circle1"></div>
+    <div class="story__circle2"></div>
 
   </div>
 
@@ -172,19 +172,24 @@ import { Image } from "astro:assets"
       shadow-xl shadow-cyan-500/50 md:ml-20 md:my-9 lg:mx-60 lg:my-6 xl:mx-24 2xl:mx-24;
     }
 
+    &__images-container{
+      @apply flex flex-col gap-4 mb-5;
+    }
+
     &__image{
-      @apply bg-story px-3 py-3 mb-5 border-1 border-gray-600  rounded-lg ;
+      @apply bg-story px-3 py-3  border-1 border-gray-600  rounded-lg ;
+    }
+
+    &__circle1{
+      @apply absolute w-15 h-15  bg-indigo-600 opacity-25 rounded-full top-0 right-0 z-10 xl:mr-157 xl:mt-148 sm:w-18 sm:h-18 sm:mr-113 sm:mt-352
+      lg:mr-182 lg:mt-258;
+    }
+
+    &__circle2{
+      @apply absolute w-22 h-22 bg-blue-600 opacity-25 rounded-full top-0 right-0 z-10 xl:mt-282 xl:mr-20 sm:mr-29 sm:mt-633
+      lg:mr-50 lg:mt-542;
+
     }
 
   } 
-
-  .bolita1{
-    @apply absolute w-15 h-15  bg-indigo-600 opacity-25 rounded-full top-0 right-0 z-10 xl:mr-157 xl:mt-148 sm:w-18 sm:h-18 sm:mr-113 sm:mt-352
-    lg:mr-182 lg:mt-258;
-  }
-
-  .bolita2{
-    @apply absolute w-22 h-22 bg-blue-600 opacity-25 rounded-full top-0 right-0 z-10 xl:mt-282 xl:mr-20 sm:mr-29 sm:mt-633
-    lg:mr-50 lg:mt-542;;
-  }
 </style>
